@@ -186,6 +186,25 @@ canvas_html = f"""
     box-shadow: 0 0 9px #FF4FD8;
   }}
 
+  /* Firma discreta nell'angolo in basso a destra */
+  .signature {{
+    position: fixed;
+    z-index: 3;
+    right: 22px;
+    bottom: 18px;
+    color: rgba(255, 220, 245, 0.82);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-shadow: 0 0 7px #FF4FD8, 0 0 15px rgba(168, 85, 247, 0.75);
+    pointer-events: none;
+  }}
+
+  @media (max-width: 480px) {{
+    .signature {{ right: 14px; bottom: 12px; font-size: 13px; }}
+  }}
+
   @keyframes appear {{
     from {{ opacity: 0; transform: translateY(-12px); }}
     to {{ opacity: 1; transform: translateY(0); }}
@@ -205,6 +224,7 @@ canvas_html = f"""
   <p>Meritato per il tuo studio e il tuo impegno</p>
   <div class="ornament"></div>
 </div>
+<div class="signature">By Salvo</div>
 <canvas id="roseCanvas"></canvas>
 
 <script>
