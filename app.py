@@ -142,9 +142,69 @@ canvas_html = f"""
     aspect-ratio: 9 / 16;
     background-color: #000000;
   }}
+
+  /* Romantic title placed above the rose */
+  .dedication {{
+    position: fixed;
+    z-index: 2;
+    top: 5.5%;
+    left: 5%;
+    width: 90%;
+    text-align: center;
+    pointer-events: none;
+    animation: appear 2s ease both;
+  }}
+
+  .dedication h1 {{
+    color: #FFEAF8;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(30px, 7vw, 58px);
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    line-height: 1.15;
+    text-shadow: 0 0 8px #FF4FD8, 0 0 22px #D946EF, 0 0 42px #A855F7;
+    margin: 0 0 12px 0;
+  }}
+
+  .dedication p {{
+    color: #EBCDE5;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(13px, 3.2vw, 19px);
+    font-weight: 400;
+    letter-spacing: 0.35px;
+    line-height: 1.5;
+    text-shadow: 0 0 10px rgba(255, 79, 216, 0.65);
+    margin: 0 auto;
+    max-width: 440px;
+  }}
+
+  .dedication .ornament {{
+    width: 54px;
+    height: 1px;
+    margin: 18px auto 0;
+    background: linear-gradient(90deg, transparent, #FF8BE3, transparent);
+    box-shadow: 0 0 9px #FF4FD8;
+  }}
+
+  @keyframes appear {{
+    from {{ opacity: 0; transform: translateY(-12px); }}
+    to {{ opacity: 1; transform: translateY(0); }}
+  }}
+
+  @media (max-height: 650px) {{
+    .dedication {{ top: 3%; }}
+    .dedication h1 {{ font-size: clamp(25px, 5vw, 40px); margin-bottom: 6px; }}
+    .dedication p {{ font-size: 12px; }}
+    .dedication .ornament {{ margin-top: 8px; }}
+  }}
 </style>
 </head>
 <body>
+<div class="dedication">
+  <h1>Un fiore per te</h1>
+  <p>Perché ci sono cose belle che meritano di brillare.</p>
+  <div class="ornament"></div>
+</div>
 <canvas id="roseCanvas"></canvas>
 
 <script>
