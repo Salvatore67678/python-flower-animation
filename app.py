@@ -201,7 +201,7 @@ canvas_html = f"""
 </head>
 <body>
 <div class="dedication">
-  <h1>Un fiore per te</h1>
+  <h1>Un fiore per Camilla</h1>
   <p>Perché ci sono cose belle che meritano di brillare.</p>
   <div class="ornament"></div>
 </div>
